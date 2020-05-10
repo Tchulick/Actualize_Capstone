@@ -8,6 +8,7 @@ class Api::RoomsController < ApplicationController
     @room = Room.new(
       name: params[:name],
       password: params[:password],
+      user_id: current_user.id,
     )
     if @room.save
       render "index.json.jb"
