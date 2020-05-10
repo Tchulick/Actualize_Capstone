@@ -1,0 +1,5 @@
+@rooms.map do |room|
+  {
+    name: room.name,
+  }
+end
