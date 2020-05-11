@@ -8,10 +8,11 @@ class Api::RoomsController < ApplicationController
     @room = Room.new(
       name: params[:name],
       password: params[:password],
+      password_status: params[:password_status],
       user_id: current_user.id,
     )
     if @room.save
-      render "index.json.jb"
+      render "show.json.jb"
     else
       render json: { errors: @room.errors.full_messages }, status: :unprocessable_entity
     end

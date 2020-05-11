@@ -1,0 +1,4 @@
+{
+  name: @room.name,
+  user_id: @room.user_id,
+}
