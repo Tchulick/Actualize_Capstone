@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     post "/rooms" => "rooms#create"
     get "/rooms/:id" => "rooms#show"
     patch "/rooms/:id" => "rooms#update"
+    delete "/rooms/:id" => "rooms#destroy"
   end
 end

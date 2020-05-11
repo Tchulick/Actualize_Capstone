@@ -34,4 +34,10 @@ class Api::RoomsController < ApplicationController
       render json: { errors: @post.errors.full_messages }, status: :bad_request
     end
   end
+
+  def destroy
+    @room = Room.find_by(id: params[:id])
+    @room.destroy
+    render json: { message: "Room successfully removed" }
+  end
 end
