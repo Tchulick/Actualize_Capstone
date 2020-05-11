@@ -7,5 +7,7 @@ Rails.application.routes.draw do
 
     get "/rooms" => "rooms#index"
     post "/rooms" => "rooms#create"
+    get "/rooms/:id" => "rooms#show"
+    patch "/rooms/:id" => "rooms#update"
   end
 end

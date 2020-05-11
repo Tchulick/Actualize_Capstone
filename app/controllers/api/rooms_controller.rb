@@ -17,4 +17,21 @@ class Api::RoomsController < ApplicationController
       render json: { errors: @room.errors.full_messages }, status: :unprocessable_entity
     end
   end
+
+  def show
+    @room = Room.find_by(id: params[:id])
+    render "show.json.jb"
+  end
+
+  def update
+    @room = Room.find_by(id: params[:id])
+    @room.name = params[:name] || @room.name
+    @room.password = params[:password] || @room.password
+    @room.password_status = params[:password_status] || @room.password_status
+    if @room.save
+      render "show.json.jb"
+    else
+      render json: { errors: @post.errors.full_messages }, status: :bad_request
+    end
+  end
 end
