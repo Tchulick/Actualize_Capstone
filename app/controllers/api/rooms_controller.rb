@@ -31,7 +31,7 @@ class Api::RoomsController < ApplicationController
     if @room.save
       render "show.json.jb"
     else
-      render json: { errors: @post.errors.full_messages }, status: :bad_request
+      render json: { errors: @room.errors.full_messages }, status: :bad_request
     end
   end
 
