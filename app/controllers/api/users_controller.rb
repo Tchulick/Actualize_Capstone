@@ -37,4 +37,10 @@ class Api::UsersController < ApplicationController
       render json: { errors: @user.errors.full_messages }, status: :bad_request
     end
   end
+
+  def destroy
+    @user = User.find_by(id: params[:id])
+    @user.destroy
+    render json: { message: "Account deleted" }
+  end
 end
