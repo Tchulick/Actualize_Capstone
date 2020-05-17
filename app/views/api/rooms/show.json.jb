@@ -3,4 +3,5 @@
   name: @room.name,
   user_id: @room.user_id,
   room_users: @room.user_rooms,
+  messages: @room.messages,
 }

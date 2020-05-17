@@ -13,5 +13,7 @@ Rails.application.routes.draw do
     get "/rooms/:id" => "rooms#show"
     patch "/rooms/:id" => "rooms#update"
     delete "/rooms/:id" => "rooms#destroy"
+
+    post "/user_rooms" => "user_rooms#create"
   end
 end

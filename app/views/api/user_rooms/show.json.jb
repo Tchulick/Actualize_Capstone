@@ -1,0 +1,6 @@
+{
+  id: @user_room.id,
+  user_id: @user_room.user_id,
+  room_id: @user_room.room_id,
+
+}
